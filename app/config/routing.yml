@@ -1,0 +1,8 @@
+ax_s_config:
+    resource: "@AxSConfigBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
