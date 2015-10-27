@@ -5,3 +5,20 @@ sonata_block:
         sonata.admin.block.admin_list:
             contexts:   [admin]
         # Your other blocks
+
+sonata_admin:
+    dashboard:
+        blocks:
+            left:
+                position: left
+                type: sonata.admin.block.admin_list
+                settings:
+                    groups: [Order, Shop]
+
+            right:
+                position: right
+                type: sonata.admin.block.admin_list
+                settings:
+                    groups: [Content, Config]
+
+    persist_filters: true
