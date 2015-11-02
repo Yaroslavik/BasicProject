@@ -37,12 +37,12 @@ CKEDITOR.editorConfig = function( config ) {
 	config.removeDialogTabs = 'image:advanced;link:advanced';
 
 	// KCFinder integration
-	config.filebrowserBrowseUrl = '/bundles/app/kcfinder/browse.php?opener=ckeditor&type=files';
-	config.filebrowserImageBrowseUrl = '/bundles/app/kcfinder/browse.php?opener=ckeditor&type=images';
-	config.filebrowserFlashBrowseUrl = '/bundles/app/kcfinder/browse.php?opener=ckeditor&type=flash';
-	config.filebrowserUploadUrl = '/bundles/app/kcfinder/upload.php?opener=ckeditor&type=files';
-	config.filebrowserImageUploadUrl = '/bundles/app/kcfinder/upload.php?opener=ckeditor&type=images';
-	config.filebrowserFlashUploadUrl = '/bundles/app/kcfinder/upload.php?opener=ckeditor&type=flash';
+	config.filebrowserBrowseUrl = '/vendor/kcfinder/browse.php?opener=ckeditor&type=files';
+	config.filebrowserImageBrowseUrl = '/vendor/kcfinder/browse.php?opener=ckeditor&type=images';
+	config.filebrowserFlashBrowseUrl = '/vendor/kcfinder/browse.php?opener=ckeditor&type=flash';
+	config.filebrowserUploadUrl = '/vendor/kcfinder/upload.php?opener=ckeditor&type=files';
+	config.filebrowserImageUploadUrl = '/vendor/kcfinder/upload.php?opener=ckeditor&type=images';
+	config.filebrowserFlashUploadUrl = '/vendor/kcfinder/upload.php?opener=ckeditor&type=flash';
 
 	config.height = 500;
 };
