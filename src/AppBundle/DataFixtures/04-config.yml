@@ -1,0 +1,92 @@
+model: AxS\ConfigBundle\Entity\Config
+fixtures:
+    config-1:
+        title: Текст
+        mask: TEXT
+        value: Просто текст
+        type: 0 # Config::TYPE_TEXT
+        required: true
+        group: config-group-sample
+
+    config-2:
+        title: Текстовый блок
+        mask: TEXTBLOCK
+        value: Просто текст
+        type: 1 # Config::TYPE_TEXTAREA
+        required: false
+        group: config-group-sample
+
+    config-3:
+        title: HTML-блок
+        mask: HTMLBLOCK
+        value: <h3>Заголовок</h3>
+        type: 2 # Config::TYPE_WYSIWYG
+        required: false
+        group: config-group-sample
+
+    config-4:
+        title: Число
+        mask: INTEGER
+        value: 5
+        type: 3 # Config::TYPE_INTEGER
+        required: true
+        group: config-group-sample
+
+    config-5:
+        title: Число (дробное)
+        mask: FLOAT
+        value: 3.14
+        type: 4 # Config::TYPE_FLOAT
+        required: true
+        group: config-group-sample
+
+    config-6:
+        title: Логическое значение
+        mask: BOOLEAN
+        value:
+        type: 5 # Config::TYPE_BOOLEAN
+        required: false
+        group: config-group-sample
+
+    config-7:
+        title: Выбор из списка
+        mask: SELECT
+        value: 0
+        type: 9 # Config::TYPE_SELECT
+        required: false
+        group: config-group-sample
+        choices: '["Male", "Female"]'
+
+    config-8:
+        title: Множественный выбор
+        mask: MULTICHOICE
+        value: '[0]'
+        type: 10 # Config::TYPE_MULTICHOICE
+        required: false
+        group: config-group-sample
+        choices: '["Male", "Female"]'
+
+    config-9:
+        title: E-mail
+        mask: EMAIL
+        value: admin@example.com
+        type: 11 # Config::TYPE_EMAIL
+        required: true
+        group: config-group-sample
+
+    config-10:
+        title: Url
+        mask: URL
+        value: http://example.com
+        type: 12 # Config::TYPE_URL
+        required: false
+        group: config-group-sample
+
+    config-11:
+        title: Regex
+        mask: REGEX
+        value:
+        type: 13 # Config::TYPE_REGEX
+        required: false
+        group: config-group-sample
+        choices: /^[0-9A-Z_]{4,32}$/

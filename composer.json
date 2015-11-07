@@ -22,7 +22,9 @@
         "sonata-project/doctrine-orm-admin-bundle": "^2.3",
         "gedmo/doctrine-extensions": "^2.4",
         "sonata-project/easy-extends-bundle": "^2.1",
-        "sonata-project/user-bundle": "^2.2"
+        "sonata-project/user-bundle": "^2.2",
+        "ircmaxell/password-compat": "^1.0",
+        "khepin/yaml-fixtures-bundle": "^1.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
