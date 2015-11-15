@@ -1,0 +1,13 @@
+model: AxS\ArticleBundle\Entity\ArticleCategory
+fixtures:
+    article-category-sample:
+        title: Категория статей
+        slug: article-category-sample
+        description: Описание
+        metaTitle: Пример категории
+        metaDescription: Описание
+        metaKeywords: Ключевые слова
+        visible: 1
+        order: 0
+        createdAt: now
+        updatedAt: now

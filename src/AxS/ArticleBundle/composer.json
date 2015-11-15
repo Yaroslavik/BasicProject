@@ -1,0 +1,34 @@
+{
+    "name": "axs/article-bundle",
+    "description": "Symfony 2 Article Bundle",
+    "type": "symfony-bundle",
+    "authors": [
+        {
+            "name": "Alexander Sholk",
+            "email": "sasha1133@gmail.com"
+        }
+    ],
+    "keywords": [
+        "symfony2 article bundle"
+    ],
+    "license": [
+        "MIT"
+    ],
+    "require": {
+    },
+    "autoload": {
+        "psr-0": {
+            "AxS\\ArticleBundle": ""
+        }
+    },
+    "target-dir": "AxS/ArticleBundle",
+    "repositories": [
+        {
+        }
+    ],
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
