@@ -1,0 +1,22 @@
+Article: Статья
+breadcrumb.link_article_list: Статьи
+breadcrumb.link_article_delete: Подтверждение удаления
+list.label_created_at: Дата создания
+list.label_title: Заголовок
+list.label_visible: Видимый
+list.label_category: Категория
+list.label__action: Действия
+filter.label_category: Категория
+filter.label_title: Заголовок
+filter.label_visible: Видимый
+form.label_category: Категория
+form.label_title: Заголовок
+form.label_slug: Адрес
+form.label_description: Описание
+form.label_content: Текст
+form.label_visible: Видимый
+form.label_created_at: Дата создания
+form.label_updated_at: Дата обновления
+form.label_meta_title: Заголовок страницы (SEO)
+form.label_meta_description: Описание (SEO)
+form.label_meta_keywords: Ключевые слова (SEO)

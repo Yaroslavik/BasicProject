@@ -18,6 +18,9 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Article
 {
+    const
+        PREVIEW_LENGTH = 80;
+
     /**
      * @ORM\Column(type="integer")
      * @ORM\Id
@@ -89,6 +92,17 @@ class Article
     public function __toString()
     {
         return $this->getTitle() ? : 'Статья';
+    }
+
+    public function previewDescription()
+    {
+        $description = strip_tags(html_entity_decode($this->description));
+
+        if (mb_strlen($description) > self::PREVIEW_LENGTH) {
+            $description = mb_substr($description, 0, self::PREVIEW_LENGTH) . '...';
+        }
+
+        return $description;
     }
 
     /**

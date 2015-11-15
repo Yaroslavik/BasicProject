@@ -29,6 +29,8 @@ class AppKernel extends Kernel
             new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
             // Sonata easy-extends
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
+            // Additional bundles
+            new Pix\SortableBehaviorBundle\PixSortableBehaviorBundle(),
             // Extended bundles
             new Application\Sonata\AdminBundle\ApplicationSonataAdminBundle(),
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),

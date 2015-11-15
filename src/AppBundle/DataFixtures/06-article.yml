@@ -1,12 +1,12 @@
 model: AxS\ArticleBundle\Entity\Article
 fixtures:
-    article-sample:
-        category: article-category-sample
-        title: Пример статьи
+    article-sample-1:
+        category: article-category-sample-1
+        title: Пример статьи 1
         slug: article-sample
         description: Описание
         visible: 1
-        metaTitle: Пример статьи
+        metaTitle: Пример статьи 1
         metaDescription: Описание
         metaKeywords: Ключевые слова
         createdAt: now
