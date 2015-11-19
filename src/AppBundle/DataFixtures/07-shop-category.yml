@@ -1,0 +1,24 @@
+model: AxS\ShopBundle\Entity\ShopCategory
+fixtures:
+    shop-category-1:
+        parent: null
+        title: Товары для маникюра
+        description: Описание
+        metaTitle: Пример категории
+        metaDescription: Описание
+        metaKeywords: Ключевые слова
+        visible: 1
+        createdAt: now
+        updatedAt: now
+
+    shop-category-2:
+        parent: shop-category-1
+        title: Материалы
+        description: Описание
+        metaTitle: Пример категории
+        metaDescription: Описание
+        metaKeywords: Ключевые слова
+        visible: 1
+        order: 1
+        createdAt: now
+        updatedAt: now

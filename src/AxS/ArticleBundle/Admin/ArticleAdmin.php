@@ -64,7 +64,7 @@ class ArticleAdmin extends Admin
         $listMapper
             ->add('createdAt')
             ->addIdentifier('title')
-            ->add('visible')
+            ->add('visible', null, ['editable' => true])
             ->add('category')
             ->add('_action', 'actions', [
                 'actions' => [

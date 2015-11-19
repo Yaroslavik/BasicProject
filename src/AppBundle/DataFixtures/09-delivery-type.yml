@@ -1,0 +1,13 @@
+model: AxS\ShopBundle\Entity\Delivery
+fixtures:
+    delivery-type-1:
+        title: Доставка курьером
+        cost: 40000
+
+    delivery-type-2:
+        title: Доставка почтой
+        cost: 25000
+
+    delivery-type-3:
+        title: Самовывоз
+        cost: 0
