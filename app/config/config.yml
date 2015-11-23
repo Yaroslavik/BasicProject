@@ -95,6 +95,12 @@ vich_uploader:
         product_file:
             uri_prefix:         /uploads/product
             upload_destination: %kernel.root_dir%/../web/uploads/product
+        category_file:
+            uri_prefix:         /uploads/category
+            upload_destination: %kernel.root_dir%/../web/uploads/category
+        product_photo_file:
+            uri_prefix:         /uploads/product_photo
+            upload_destination: %kernel.root_dir%/../web/uploads/product_photo
 
 liip_imagine:
     resolvers:
@@ -112,6 +118,12 @@ liip_imagine:
 ax_s_shop:
     date_format: 'dd.MM.yyyy HH:mm'
     product:
+#        form_preview_class: form-preview
+        use_product_options: true
+        use_product_photos: true
+    product_photo:
+#        form_preview_class: form-preview
+    category:
 #        form_preview_class: form-preview
 
 ax_s_config:
