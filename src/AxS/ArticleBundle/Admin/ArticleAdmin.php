@@ -22,39 +22,55 @@ class ArticleAdmin extends Admin
 
     protected function configureFormFields(FormMapper $formMapper)
     {
+        $dateFormat = $this->getConfigurationPool()->getContainer()->getParameter('axs_article.date_format');
+
         $formMapper
             ->tab('Основное')
-                ->with('Основное')
-                    ->add('category')
-                    ->add('title')
-                    ->add('slug', null, ['required' => false])
-                    ->add('description', null, ['attr' => ['class' => 'wysiwyg']])
-                    ->add('content', null, ['attr' => ['class' => 'wysiwyg']])
-                    ->add('visible', null, ['required' => false])
-                    ->add('createdAt', null, [
-                        'required' => false,
-                        'widget' => 'single_text',
-                        'attr' => ['readonly' => true]])
-                    ->add('updatedAt', null, [
-                        'required' => false,
-                        'widget' => 'single_text',
-                        'attr' => ['readonly' => true]])
-                ->end()
+            ->with('Основное');
+
+        if ($this->getConfigurationPool()->getContainer()->getParameter('axs_article.use_categories')) {
+            $formMapper->add('category');
+        }
+
+        $formMapper
+            ->add('title')
+            ->add('slug', null, ['required' => false])
+            ->add('description', null, ['attr' => ['class' => 'wysiwyg']])
+            ->add('content', null, ['attr' => ['class' => 'wysiwyg']])
+            ->add('visible', null, ['required' => false])
+            ->add('createdAt', 'datetime', [
+                'required' => false,
+                'format' => $dateFormat,
+                'widget' => 'single_text',
+                'disabled' => true,
+                'read_only' => true,
+            ])
+            ->add('updatedAt', 'datetime', [
+                'required' => false,
+                'format' => $dateFormat,
+                'widget' => 'single_text',
+                'disabled' => true,
+                'read_only' => true,
+            ])
+            ->end()
             ->end()
             ->tab('SEO')
-                ->with('SEO')
-                    ->add('metaTitle')
-                    ->add('metaDescription')
-                    ->add('metaKeywords')
-                ->end()
+            ->with('SEO')
+            ->add('metaTitle')
+            ->add('metaDescription')
+            ->add('metaKeywords')
+            ->end()
             ->end();
 
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
+        if ($this->getConfigurationPool()->getContainer()->getParameter('axs_article.use_categories')) {
+            $datagridMapper->add('category');
+        }
+
         $datagridMapper
-            ->add('category')
             ->add('title')
             ->add('visible');
     }
@@ -64,8 +80,13 @@ class ArticleAdmin extends Admin
         $listMapper
             ->add('createdAt')
             ->addIdentifier('title')
-            ->add('visible', null, ['editable' => true])
-            ->add('category')
+            ->add('visible', null, ['editable' => true]);
+
+        if ($this->getConfigurationPool()->getContainer()->getParameter('axs_article.use_categories')) {
+            $listMapper->add('category');
+        }
+        
+        $listMapper
             ->add('_action', 'actions', [
                 'actions' => [
                     'edit' => [],

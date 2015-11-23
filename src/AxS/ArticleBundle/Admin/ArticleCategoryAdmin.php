@@ -33,6 +33,8 @@ class ArticleCategoryAdmin extends Admin
 
     protected function configureFormFields(FormMapper $formMapper)
     {
+        $dateFormat = $this->getConfigurationPool()->getContainer()->getParameter('axs_article.date_format');
+
         $formMapper
             ->tab('Основное')
                 ->with('Основное')
@@ -40,14 +42,20 @@ class ArticleCategoryAdmin extends Admin
                     ->add('slug', null, ['required' => false])
                     ->add('description', null, ['attr' => ['class' => 'wysiwyg']])
                     ->add('visible', null, ['required' => false])
-                    ->add('createdAt', null, [
+                    ->add('createdAt', 'datetime', [
                         'required' => false,
+                        'format' => $dateFormat,
                         'widget' => 'single_text',
-                        'attr' => ['readonly' => true]])
-                    ->add('updatedAt', null, [
+                        'disabled' => true,
+                        'read_only' => true,
+                    ])
+                    ->add('updatedAt', 'datetime', [
                         'required' => false,
+                        'format' => $dateFormat,
                         'widget' => 'single_text',
-                        'attr' => ['readonly' => true]])
+                        'disabled' => true,
+                        'read_only' => true,
+                    ])
                 ->end()
             ->end()
             ->tab('SEO')

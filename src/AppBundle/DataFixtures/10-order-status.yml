@@ -1,0 +1,14 @@
+model: AxS\ShopBundle\Entity\OrderStatus
+fixtures:
+    order-status-1:
+        title: Открыт
+        default: 1
+    order-status-2:
+        title: В обработке
+        default: 0
+    order-status-3:
+        title: Отменен
+        default: 0
+    order-status-4:
+        title: Выполнен
+        default: 0

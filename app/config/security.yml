@@ -6,7 +6,6 @@ security:
 
     role_hierarchy:
         ROLE_STAFF:
-        ROLE_STAFF:
             # Page
             - ROLE_SONATA_ADMIN_AXS_PAGE_LIST
             - ROLE_SONATA_ADMIN_AXS_PAGE_VIEW

@@ -1,16 +1,4 @@
 services:
-    sonata.admin.axs.article:
-        class: AxS\ArticleBundle\Admin\ArticleAdmin
-        tags:
-            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Article" }
-        arguments:
-            - ~
-            - AxS\ArticleBundle\Entity\Article
-            - ~
-        calls:
-            - [setTranslationDomain, [AxSArticle]]
-            - [setLabelTranslatorStrategy, [@sonata.admin.label.strategy.underscore]]
-
     sonata.admin.axs.article_category:
         class: AxS\ArticleBundle\Admin\ArticleCategoryAdmin
         tags:

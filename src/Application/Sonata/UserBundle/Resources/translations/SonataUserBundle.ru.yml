@@ -3,3 +3,4 @@ sonata_user_already_authenticated: Вы уже прошли авторизаци
 User account is disabled.: Пользователь заблокирован
 filter.label_username: Имя пользователя
 filter.label_groups: Группа
+filter.label_enabled: Активен

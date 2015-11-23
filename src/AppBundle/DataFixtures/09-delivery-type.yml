@@ -1,4 +1,4 @@
-model: AxS\ShopBundle\Entity\Delivery
+model: AxS\ShopBundle\Entity\DeliveryType
 fixtures:
     delivery-type-1:
         title: Доставка курьером

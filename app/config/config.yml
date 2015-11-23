@@ -85,3 +85,30 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
+sonata_intl:
+    timezone:
+        default: Europe/Minsk
+
+# Shop Configuration
+ax_s_shop:
+    product:
+        thumbs:
+            small:
+                width: 200
+                height: 150
+            medium:
+                width: 600
+                height: 400
+            large:
+                width: 1200
+                height: 800
+
+ax_s_config:
+    use_groups: true
+
+ax_s_page:
+    date_format: 'dd.MM.yyyy HH:mm'
+
+ax_s_article:
+    date_format: 'dd.MM.yyyy HH:mm'
+    use_categories: true
