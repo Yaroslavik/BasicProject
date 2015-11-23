@@ -32,6 +32,8 @@ class AppKernel extends Kernel
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
             // Additional bundles
             new Pix\SortableBehaviorBundle\PixSortableBehaviorBundle(),
+            new Vich\UploaderBundle\VichUploaderBundle(),
+            new Liip\ImagineBundle\LiipImagineBundle(),
             // Extended bundles
             new Application\Sonata\AdminBundle\ApplicationSonataAdminBundle(),
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),

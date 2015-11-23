@@ -7,6 +7,10 @@ app:
     resource: "@AppBundle/Controller/"
     type:     annotation
 
+# Liip imagine
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"
+
 # SonataAdmin
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'

@@ -89,19 +89,30 @@ sonata_intl:
     timezone:
         default: Europe/Minsk
 
+vich_uploader:
+    db_driver: orm
+    mappings:
+        product_file:
+            uri_prefix:         /uploads/product
+            upload_destination: %kernel.root_dir%/../web/uploads/product
+
+liip_imagine:
+    resolvers:
+       default:
+          web_path: ~
+
+    filter_sets:
+        cache: ~
+        small:
+            quality: 80
+            filters:
+                thumbnail: { size: [200, 120], mode: outbound }
+
 # Shop Configuration
 ax_s_shop:
+    date_format: 'dd.MM.yyyy HH:mm'
     product:
-        thumbs:
-            small:
-                width: 200
-                height: 150
-            medium:
-                width: 600
-                height: 400
-            large:
-                width: 1200
-                height: 800
+#        form_preview_class: form-preview
 
 ax_s_config:
     use_groups: true

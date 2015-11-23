@@ -13,3 +13,4 @@
 /.idea/*
 /web/uploads/*
 !web/uploads/.gitkeep
+/web/media/
