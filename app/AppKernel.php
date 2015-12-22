@@ -38,6 +38,7 @@ class AppKernel extends Kernel
             new Application\Sonata\AdminBundle\ApplicationSonataAdminBundle(),
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
             // AxS bundles:
+            new AxS\CommonBundle\AxSCommonBundle(),
             new AxS\ConfigBundle\AxSConfigBundle(),
             new AxS\PageBundle\AxSPageBundle(),
             new AxS\ShopBundle\AxSShopBundle(),

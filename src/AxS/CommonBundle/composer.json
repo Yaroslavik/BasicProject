@@ -1,6 +1,6 @@
 {
-    "name": "axs/article-bundle",
-    "description": "Symfony 2 Article Bundle",
+    "name": "axs/common-bundle",
+    "description": "Symfony 2 Common Bundle",
     "type": "symfony-bundle",
     "authors": [
         {
@@ -9,26 +9,21 @@
         }
     ],
     "keywords": [
-        "symfony2 article bundle"
+        "symfony2 common bundle"
     ],
     "license": [
         "MIT"
     ],
     "require": {
-        "gedmo/doctrine-extensions": "^2.4",
-        "pixassociates/sortable-behavior-bundle": "^1.0",
-        "axs/common-bundle": "dev-master"
     },
     "autoload": {
         "psr-0": {
-            "AxS\\ArticleBundle": ""
+            "AxS\\CommonBundle": ""
         }
     },
-    "target-dir": "AxS/ArticleBundle",
+    "target-dir": "AxS/CommonBundle",
     "repositories": [
         {
-            "type": "vcs",
-            "url": "https://github.com/alexsholk/AxSCommonBundle.git"
         }
     ],
     "extra": {

@@ -11,15 +11,22 @@ namespace AxS\ArticleBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
+use AxS\CommonBundle\Traits\UploadableTrait;
+use AxS\CommonBundle\Interfaces\UploadableInterface;
 
 /**
  * @ORM\Entity()
  * @ORM\Table(name="axs_article")
+ * @ORM\HasLifecycleCallbacks()
  */
-class Article
+class Article implements UploadableInterface
 {
+    use UploadableTrait;
+
     const
-        PREVIEW_LENGTH = 80;
+        PREVIEW_LENGTH = 80,
+        UPLOAD_DIR = '/uploads/article';
+
 
     /**
      * @ORM\Column(type="integer")
@@ -89,9 +96,38 @@ class Article
      **/
     protected $category;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    protected $filename;
+
     public function __toString()
     {
         return $this->getTitle() ? : 'Статья';
+    }
+
+    public function getFilenameField()
+    {
+        return 'filename';
+    }
+
+    public function getUploadDir()
+    {
+        return WEB_DIR . self::UPLOAD_DIR;
+    }
+
+    public function getPath()
+    {
+        if ($this->filename) {
+            return $this->getUploadDir() . '/' . $this->filename;
+        }
+    }
+
+    public function getWebPath()
+    {
+        if ($this->filename) {
+            return self::UPLOAD_DIR . '/' . $this->filename;
+        }
     }
 
     public function previewDescription()
@@ -377,5 +413,29 @@ class Article
     public function getCategory()
     {
         return $this->category;
+    }
+
+    /**
+     * Set filename
+     *
+     * @param string $filename
+     *
+     * @return Article
+     */
+    public function setFilename($filename)
+    {
+        $this->filename = $filename;
+
+        return $this;
+    }
+
+    /**
+     * Get filename
+     *
+     * @return string
+     */
+    public function getFilename()
+    {
+        return $this->filename;
     }
 }

@@ -22,6 +22,8 @@ class ArticleAdmin extends Admin
 
     protected function configureFormFields(FormMapper $formMapper)
     {
+        $object = $this->getSubject();
+
         $dateFormat = $this->getConfigurationPool()->getContainer()->getParameter('axs_article.date_format');
 
         $formMapper
@@ -35,7 +37,11 @@ class ArticleAdmin extends Admin
         $formMapper
             ->add('title')
             ->add('slug', null, ['required' => false])
-            ->add('description', null, ['attr' => ['class' => 'wysiwyg']])
+            ->add('file', 'file', [
+                'required' => !$object->getWebPath(),
+                'help' => $object->getWebPath() ? sprintf('<img src="%s" class="form-preview">', $object->getWebPath()) : '',
+            ])
+            ->add('description', 'textarea')
             ->add('content', null, ['attr' => ['class' => 'wysiwyg']])
             ->add('visible', null, ['required' => false])
             ->add('createdAt', 'datetime', [
@@ -61,7 +67,6 @@ class ArticleAdmin extends Admin
             ->add('metaKeywords')
             ->end()
             ->end();
-
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
@@ -78,6 +83,7 @@ class ArticleAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
+            ->addIdentifier('file', null, ['template' => 'AxSArticleBundle:Admin:list_field_image.html.twig'])
             ->add('createdAt')
             ->addIdentifier('title')
             ->add('visible', null, ['editable' => true]);
